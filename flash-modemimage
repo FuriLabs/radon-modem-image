@@ -1,0 +1,20 @@
+#!/bin/bash
+
+MODEM_IMAGE="/usr/share/modem-image/modem.img"
+MD1IMG_PATH="/dev/disk/by-partlabel/md1img_a"
+
+if [ -f "${MODEM_IMAGE}" ]; then
+	if [ -e "${MD1IMG_PATH}" ]; then
+		echo "Flashing modem image from ${MODEM_IMAGE} to ${MD1IMG_PATH}"
+		dd if="${MODEM_IMAGE}" of="${MD1IMG_PATH}" bs=1M status=progress
+
+	else
+		echo "modem partition does not exist at path ${MD1IMG_PATH}"
+		exit 0
+	fi
+else
+	echo "modem image is not available at ${MODEM_IMAGE}"
+	exit 0
+fi
+
+exit 0

@@ -1,0 +1,17 @@
+Source: krypton-modem-image
+Maintainer: Bardia Moshiri <fakeshell@bardia.tech>
+Section: misc
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               curl,
+               tar,
+Standards-Version: 4.7.2
+Vcs-Browser: https://github.com/furilabs/radon-modem-image
+Vcs-Git: https://github.com/furilabs/radon-modem-image.git
+
+Package: radon-modem-image
+Architecture: arm64
+Depends: ${misc:Depends}
+Provides: device-modem-image
+Conflicts: device-modem-image
+Description: Modem image for radon

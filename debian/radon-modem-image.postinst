@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+configure() {
+	/usr/libexec/flash-modemimage
+}
+
+case "$1" in
+	"configure")
+		configure
+		;;
+esac
